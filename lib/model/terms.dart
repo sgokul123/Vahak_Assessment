@@ -10,11 +10,14 @@ class Terms {
   }
 
   factory Terms.fromJson(Map<String, dynamic> json) {
-    return Terms(
-      description: json['description'] != null
-          ? json['description'].map((value) => value).toList()
-          : null,
-    );
+    if(json!=null)
+    {
+      return Terms(
+        description: json['description'] != null
+            ? json['description'].map((value) => value).toList()
+            : null,
+      );
+    }else return null;
   }
 //
 

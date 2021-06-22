@@ -12,7 +12,6 @@ class Redirects {
       "to": this.to,
     };
   }
-
   factory Redirects.fromJson(Map<String, dynamic> json) {
     return Redirects(
       index: json["index"],

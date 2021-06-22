@@ -8,7 +8,6 @@ import 'package:vahak_assessment/controller/wiki_search_controller.dart';
 
 class SearchWikiInput extends StatelessWidget {
   String hint;
-  OnSearchLeadResponse onSearchLeadResponse;
   BuildContext context;
   String initialValue;
   onClickOfSearchBtnCallback onSearchBtnCallback;
@@ -24,7 +23,6 @@ class SearchWikiInput extends StatelessWidget {
     this.textEditingController,
     this.onSearchBtnCallback,
     this.onValueChanged,
-    @required this.onSearchLeadResponse,
   });
 
   @override

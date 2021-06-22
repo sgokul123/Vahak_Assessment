@@ -19,11 +19,10 @@ class ProgressDialogs {
               children: <Widget>[
                 Center(
                   child: Container(
-                      child: Image.asset(
-                    'assets/hfc_loader.gif',
-                    height: 100,
-                    width: 70,
-                  )),
+                      child: CircularProgressIndicator(
+                        backgroundColor: Colors.redAccent,
+                        valueColor: new AlwaysStoppedAnimation<Color>(Colors.grey),
+                      )),
                 )
               ],
             ),

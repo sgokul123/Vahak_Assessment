@@ -27,8 +27,6 @@ class WikiSearchController extends GetxController {
       String strRequest,
       operation,
       Function searchWikiResponse}) {
-    var data = {'leadId': "", 'userType': " this.kycInputModel.userType,"};
-
     _apiRepository.callAPIService(
         context: context,
         strRequest: strRequest,
@@ -38,11 +36,16 @@ class WikiSearchController extends GetxController {
             _leadList.add(item);
           }
           this.mySearchResult = _leadList;
+          this.showPlaceHolder = false;
+        },
+        searchWikiError: () {
+          this.showPlaceHolder = true;
         });
   }
 
   void clearList() {
     List<Pages> _leadList = List<Pages>.empty(growable: true);
     this.mySearchResult = _leadList;
+    this.showPlaceHolder = true;
   }
 }
