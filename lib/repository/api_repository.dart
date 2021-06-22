@@ -36,7 +36,6 @@ class APIRepository {
         });
         print(response.data);
         if (response != null && response.statusCode == 200) {
-          print("---response---$response");
           Map<String, dynamic> json = response.data;
           WikiQuery wikiQuery = WikiQuery.fromJson(json["query"]);
           print("---response---${wikiQuery.toJson()}.");

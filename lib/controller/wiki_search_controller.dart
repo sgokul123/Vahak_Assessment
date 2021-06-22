@@ -8,6 +8,8 @@ import 'package:vahak_assessment/repository/api_repository.dart';
 class WikiSearchController extends GetxController {
   final _mySearchResult = List<Pages>.empty(growable: true).obs;
   TextEditingController searchController = TextEditingController();
+
+  ///if List is empty then show placeholder
   final _showPlaceHolder = true.obs;
   BuildContext context;
   APIRepository _apiRepository = Get.find();
@@ -22,6 +24,7 @@ class WikiSearchController extends GetxController {
 
   set mySearchResult(value) => this._mySearchResult.assignAll(value);
 
+  ///Call Search Wiki Api on the basis of Key entered by user
   void callIMDSearchLeadApi(
       {BuildContext context,
       String strRequest,
@@ -39,10 +42,12 @@ class WikiSearchController extends GetxController {
           this.showPlaceHolder = false;
         },
         searchWikiError: () {
+          /// If list is empty then update placeholder
           this.showPlaceHolder = true;
         });
   }
 
+  ///Clear list of items if user enter new key input
   void clearList() {
     List<Pages> _leadList = List<Pages>.empty(growable: true);
     this.mySearchResult = _leadList;
